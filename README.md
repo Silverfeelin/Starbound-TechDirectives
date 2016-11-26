@@ -38,11 +38,10 @@ tech.setDirectivesPriority("glow", 2)
 
 ## Wiki
 
-Installation, setting up and further information can be found on the [Wiki](https://github.com/Silverfeelin/Starbound-TechDirectives/wiki).
+Setting up and further information can be found on the [Wiki](https://github.com/Silverfeelin/Starbound-TechDirectives/wiki).
 
 #### Quick Reference
 
-* [Installation](https://github.com/Silverfeelin/Starbound-TechDirectives/wiki/Installation)
 * [Setting Up](https://github.com/Silverfeelin/Starbound-TechDirectives/wiki/Setting-Up)
 * [Redistribution](https://github.com/Silverfeelin/Starbound-TechDirectives/wiki/Redistribution)
 
