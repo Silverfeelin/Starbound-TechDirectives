@@ -60,14 +60,18 @@ end
 ]]
 function public.appendDirectives(name, directives, priority, enabled)
   if type(name) ~= "string" then name = tostring(#private.enabledDirectives + 1) end
+  if type(directives) ~= "string" then directives = "" end
   if type(enabled) ~= "boolean" then enabled = true end
   if type(priority) ~= "number" then priority = 0 end
 
   local d = { name = name, directives = directives, priority = priority, enabled = enabled }
 
-  table.insert(private.enabledDirectives, d)
+  local ls = enabled and private.enabledDirectives or private.disabledDirectives
+  table.insert(ls, d)
 
-  public.applyDirectives()
+  if enabled then
+    public.applyDirectives()
+  end
 
   return name
 end
@@ -80,8 +84,10 @@ end
     EG. "?setcolor=ffffff"
 ]]
 function public.updateDirectives(name, directives)
+  if type(directives) ~= "string" then directives = "" end
   local d = public.getDirectives(name)
   d.directives = directives
+
   public.applyDirectives()
 end
 
@@ -94,6 +100,8 @@ end
 ]]
 function public.toggleDirectives(name, enabled)
   local d = public.getDirectives(name)
+  if type(enabled) ~= "boolean" then enabled = not d.enabled end
+
   if d.enabled == enabled then
     local str = enabled and "enable" or "disable"
     private.logWarn("Attempted to %s directives %s while they are already %s.",
@@ -123,14 +131,15 @@ function public.enableDirectives(name) public.toggleDirectives(name, true) end
 function public.disableDirectives(name) public.toggleDirectives(name, false) end
 
 --[[
-  Sets the priority of appended directives. Does not update the directives on
-  the user's character.
+  Sets the priority of appended directives. Updates the directives on
+  the user's character if the directives are enabled.
   @param name - Name of the appended directives.
   @param priority - New priority for the directives.
 ]]
 function public.setDirectivesPriority(name, priority)
   local d = public.getDirectives(name)
   d.priority = priority
+  if d.enabled then public.applyDirectives() end
 end
 
 --[[
