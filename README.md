@@ -17,9 +17,24 @@ tech.setDirectivesPriority("glow", 2)
 ```
 
 ## Table of Contents
-- [Wiki](#wiki)
 - [Features](#features)
+- [Installation](#installation)
+- [Wiki](#wiki)
 - [Contributing](#contributing)
+
+## Features
+
+* Management of different directives.
+ * Update just the directives you want to update, without worrying about concatenating different part strings and overwriting directives at the wrong time.
+ * Set the order in which directives are applied.
+ * Toggle directives on and off.
+* Identification of directives by a given name, much like various animator functions known in the vanilla game.
+
+## Installation
+
+* [Download the latest release](https://github.com/Silverfeelin/Starbound-TechDirectives/releases).
+ * Make sure you don't download the release, not the source code!
+* Place the `TechDirectives.pak` in your mod folder (`/Starbound/mods/TechDirectives.pak`).
 
 ## Wiki
 
@@ -30,14 +45,6 @@ Installation, setting up and further information can be found on the [Wiki](http
 * [Installation](https://github.com/Silverfeelin/Starbound-TechDirectives/wiki/Installation)
 * [Setting Up](https://github.com/Silverfeelin/Starbound-TechDirectives/wiki/Setting-Up)
 * [Redistribution](https://github.com/Silverfeelin/Starbound-TechDirectives/wiki/Redistribution)
-
-## Features
-
-* Management of different directives.
- * Update just the directives you want to update, without worrying about concatenating different part strings and overwriting directives at the wrong time.
- * Set the order in which directives are applied.
- * Toggle directives on and off.
-* Identification of directives by a given name, much like various animator functions known in the vanilla game.
 
 ## Contributing
 
