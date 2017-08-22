@@ -1,4 +1,6 @@
 --[[
+  https://github.com/Silverfeelin/Starbound-TechDirectives/blob/master/LICENSE
+
   Require this script inside the init function of a tech script!
   require "/scripts/techDirectives.lua"
 
